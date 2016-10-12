@@ -29,28 +29,16 @@
 
 <h1>Site Heading-TBA</h1>
 <br/>
+
 <div id="mainSection">
-    <div id="about this site">
+    <div id="aboutThisSite">
         About this Site
     </div>
 
-    <div id="Our Team">
+    <div id="OurTeam">
         Our Team
     </div>
 </div>
-<script type="text/javascript.js"></script>             <!--js files not connecting to the div ids yet-TBF-->
-<script src="./vendor/scripts/jquery-2.1.4.js"></script>
-<script src="./vendor/scripts/page.js"></script>
-<script src="./js/aboutController.js"></script>
-<script src="./js/routes.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $.get("about this site", function (data) {
-            $("#about").html(data);
-        })
-    });
-</script>
 
 <script src="vendor/scripts/jquery-2.1.4.js"></script>
 <script src="vendor/scripts/handlebars.js"></script>
@@ -59,10 +47,20 @@
 <script src="vendor/scripts/webdb.js"></script>
 <script src="vendor/scripts/page.js"></script>
 
-<script src="js/controller.js"></script>
-<script src="js/repo.js"></script>
-<script src="js/view.js"></script>
-<script src="js/routes.js"></script>
+<script src="./js/aboutController.js"></script>
+<script src="./js/controller.js"></script>
+<script src="./js/repo.js"></script>
+<script src="./js/view.js"></script>
+<script src="./js/routes.js"></script>
+
+<!--I'm a little confused as to why this is here... I thought this would be handled by routes-->
+<script>
+    $(document).ready(function () {
+        $.get("about this site", function (data) {
+            $("#about").html(data);
+        })
+    });
+</script>
 
 </body>
 
