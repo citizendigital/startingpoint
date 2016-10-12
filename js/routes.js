@@ -1,14 +1,14 @@
 page('/', function(){
-    mainController.index;
+    mainController.index();
 });
 page('/about', function() {
-    aboutController.index
+    aboutController.index()
 });
 page('/form', function() {
-    formController.index
+    formController.index();
 });
 page('/team', function() {
-    teamController.index
+    teamController.index();
 });
 
 //  Activate page.js!
