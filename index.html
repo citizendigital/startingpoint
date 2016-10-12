@@ -13,6 +13,25 @@
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/modules.css">
 
+
+    <script id="template" type="text/x-handlebars-template">
+        <div id="sectionWrapper">
+            <div>
+                <div>
+                    <address><a href={{url}}>{{title}}</a></address>
+                    <span class="dateTime">{{date}}</span>
+                </div>
+                <div class="description">
+                    <p>{{description}}</p>
+                    <a href={{gitUrl}}><i class="fa fa-github-square" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div>
+                <img src={{imgUrl}} alt="">
+            </div>
+
+        </div>
+    </script>
 </head>
 
 <body>

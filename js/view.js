@@ -4,5 +4,6 @@
     mainView.init = function() {
 
     };
-
+    
+    module.mainView = mainView;
 })(window);
