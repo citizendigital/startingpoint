@@ -1,0 +1,42 @@
+h1 {
+font-family: 'Open Sans', sans-serif, Arial;
+color: blue;
+text-align: left;
+font-size: 50px;
+}
+
+p{
+  font-size: 20px;
+  font-family:'Open Sans', sans-serif, Arial;
+  color: black;
+}
+
+th {
+  font-family:'Open Sans', sans-serif, Arial;
+  color: black;
+  background-color: fuchsia;
+  font-size: 30px;
+}
+
+tr{
+  font-family: courier, monospace, ;
+  color:black;
+  background-color: orange;
+  font-size: 25px;
+}
+div {
+ height: 150px;
+ width:  250px;
+ }
+
+ .orange{
+ background-color: orange;
+}
+
+.yellow{
+  background-color: yellow;
+}
+.fuchsia{
+  background-color:fuchsia;
+
+}
