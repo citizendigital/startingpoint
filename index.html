@@ -8,11 +8,62 @@
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/modules.css">
-
 </head>
 
 <body>
+<nav class="mainMenu">
 
+    <!--<i class="icon-menu"></i>-->          <!--do we want to add icons to main pg-->
+    <ul>
+        <li class="tab" data-content="Home"><a href="/" class="icon-home3"> Home</a></li>
+        <li class="tab" data-content="about this site"><a href="/siteinfo" class="icon-address-book"> About This
+            Site</a></li>
+        <li class="tab" data-content="ourteam"><a href="/about" class="icon-address-book"> Our Team </a></li>
+        <!--<li class="tab" data-content="TBA"><a href="/TBA" class="icon-address-book"> TBA</a></li>-->
+        <!--Placeholder - may or may not useTBA-->
+
+    </ul>
+</nav>
+
+<div class="content-placeholder"></div>
+
+<h1>Site Heading-TBA</h1>
+<br/>
+    <div id="mainSection">
+        <div id="about this site">
+            About this Site
+        </div>
+
+        <div id="Our Team">
+            Our Team
+        </div>
+    </div>
+    <script type="text/javascript.js"></script>             <!--js files not connecting to the div ids yet-TBF-->
+    <script src="./vendor/scripts/jquery-2.1.4.js"></script>
+    <script src="./vendor/scripts/page.js"></script>
+    <script src="./js/aboutController.js"></script>
+    <script src="./js/routes.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $.get("about this site", function (data) {
+                $("#about").html(data);
+            })
+        });
+    </script>
+
+
+    <script src="vendor/scripts/jquery-2.1.4.js"></script>
+    <script src="vendor/scripts/handlebars.js"></script>
+    <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/html5sql.js"></script>
+    <script src="vendor/scripts/webdb.js"></script>
+    <script src="vendor/scripts/page.js"></script>
+
+    <script src="js/controller.js"></script>
+    <script src="js/repo.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/routes.js"></script>
 
 </body>
 
