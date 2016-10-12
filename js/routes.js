@@ -1,7 +1,15 @@
-page('/', mainController.index);
-page('/about', aboutController.index);
-page('/form', formController.index);
-page('/team', teamController.index);
+page('/', function(){
+    mainController.index;
+});
+page('/about', function() {
+    aboutController.index
+});
+page('/form', function() {
+    formController.index
+});
+page('/team', function() {
+    teamController.index
+});
 
 //  Activate page.js!
 page();
