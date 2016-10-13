@@ -8,6 +8,9 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Citizen Digital</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+
     <link rel="stylesheet" href="./vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
@@ -41,44 +44,78 @@
 
 <body>
 <nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span> // this is bootstraps way of making a hamburger button
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Citizen Digital</a>
-        </div>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span> // this is bootstraps way of making a hamburger button
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Citizen Digital</a>
+            </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">About This Site</a></li>
-                <li><a href="#">Our Team</a></li>
-            </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/about">About This Site</a></li>
+                    <li><a href="/team">Our Team</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid --></div>
 </nav>
 <nav class="mainMenu">
 
-    <!--<i class="icon-menu"></i>-->          <!--do we want to add icons to main pg-->
-    <ul>
-        <li class="tab" data-content="Home"><a href="/" class="icon-home3"> Home</a></li>
-        <li class="tab" data-content="about this site"><a href="/siteinfo" class="icon-address-book"> About This Site</a></li>
-        <li class="tab" data-content="ourteam"><a href="/about" class="icon-address-book"> Our Team </a></li>
-        <!--<li class="tab" data-content="TBA"><a href="/TBA" class="icon-address-book"> TBA</a></li>-->
-        <!--Placeholder - may or may not useTBA-->
-
-    </ul>
 </nav>
 
 <div class="content-placeholder"></div>
 
-<h1>Site Heading-TBA</h1>
-<br/>
+<div class="container">
+    <div class="jumbotron">
+        <h1>Starting Point</h1>
+    </div>
+</div>
 
+<div class="container">
+
+    <!-- Test Template -->
+    <div class="col-lg-8" id="tweetsInsert">
+
+        <div id="sectionWrapper">
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <!-- {{topic}} -->
+                        Protesting The Police
+                    </div>
+                    <div class="panel-body">
+
+                        Tweet Test. BLAH BLAH.
+                        <!--{{user}}-->
+                        Jon Walz
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!--<img src={{imgUrl}} alt="">-->
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <!-- Blog Search Well -->
+        <div class="well">
+            <h2>Top 5 Topics</h2>
+
+        </div>
+    </div>
+</div>
 
 
 <script src="./vendor/scripts/jquery-2.1.4.js"></script>
@@ -93,15 +130,6 @@
 <script src="./js/repo.js"></script>
 <script src="./js/view.js"></script>
 <script src="./js/routes.js"></script>
-
-<!--I'm a little confused as to why this is here... I thought this would be handled by routes-->
-<!--<script>-->
-    <!--$(document).ready(function () {-->
-        <!--$.get("about this site", function (data) {-->
-            <!--$("#about").html(data);-->
-        <!--})-->
-    <!--});-->
-<!--</script>-->
 
 </body>
 
