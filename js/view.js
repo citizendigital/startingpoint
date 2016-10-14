@@ -9,8 +9,24 @@
     };
 
     mainView.init = function () {
-
+        $('#aboutThisSite').hide();
+        $('#ourTeam').hide();
+        $('#commentForm').hide();
+        $('#tweetsPool').show();
     };
 
+    mainView.about = function () {
+        $('#tweetsPool').hide();
+        $('#ourTeam').hide();
+        $('#commentForm').hide();
+        $('#aboutThisSite').show();
+    };
+
+    mainView.team = function () {
+        $('#tweetsPool').hide();
+        $('#commentForm').hide();
+        $('#aboutThisSite').hide();
+        $('#ourTeam').show();
+    };
     module.mainView = mainView;
 })(window);

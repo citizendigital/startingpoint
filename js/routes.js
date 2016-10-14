@@ -1,15 +1,15 @@
 page('/', function(){
     // mainController.index();
-    tweetsController.init();
+    tweetsController.init(mainView.init);
 });
 page('/about', function() {
-    aboutController.index()
+    mainView.about();
 });
 page('/form', function() {
     formController.index();
 });
 page('/team', function() {
-    teamController.index();
+    mainView.team();
 });
 
 //  Activate page.js!
