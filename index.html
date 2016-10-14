@@ -23,26 +23,23 @@
                     <div class="panel-heading">
                         <!-- {{topic}} -->
                     </div>
-                    <div class="panel-body">
-                        <!--{{Tweet}}-->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!--{{user}}-->
+                        </div>
                     </div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <!--{{user}}-->
-                    </div>
+                <div>
+                    <img src={{imgUrl}} alt="">
                 </div>
             </div>
-            <div>
-                <img src={{imgUrl}} alt="">
-            </div>
-
         </div>
     </script>
-
 </head>
+<!-- END HEAD -->
 
 <body>
+
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="container-fluid">
@@ -50,7 +47,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
                         data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span> // this is bootstraps way of making a hamburger button
+                    <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -68,14 +65,13 @@
         </div><!-- /.container-fluid --></div>
 </nav>
 
-<div class="content-placeholder"></div>
-
 <div class="container">
     <div class="jumbotron">
         <h1>Starting Point</h1>
     </div>
 </div>
 
+<!-- This container holds together the formatting. Everything other than the nav and jumbotron should be inside this div -->
 <div class="container">
 
     <div class="col-lg-8" id="columnLeft">
@@ -185,23 +181,24 @@
             <br/>
         </div>
 
-    <div id="commentForm">
-        <h1>Comment Form</h1>
+        <div id="commentForm">
+            <h1>Comment Form</h1>
 
-        <p>Please use the form below to write your comments, issue or concerns about a particular social justice issue
-            in the Portland Metropolatian area.
-            <br/>
-        <ul> Guidelines for posting on this site
-            <li>The character limit is set at 140 characters</li>
-            <li>Be clear and concise when posting your comments here</li>
-            <li>Create your own # hashtag</li>
-            <li>Submit button will send your comment to Twitter's screen for log in</li>
-            <li>You must have your own Twitter account to use this site</li>
-            <li>Be aware of Twitter's policies for posting appropriate comments.</li>
-        </ul>
-        <!-- INSERT COMMENT FORM HERE-->
+            <p>Please use the form below to write your comments, issue or concerns about a particular social justice
+                issue
+                in the Portland Metropolatian area.
+                <br/>
+            <ul> Guidelines for posting on this site
+                <li>The character limit is set at 140 characters</li>
+                <li>Be clear and concise when posting your comments here</li>
+                <li>Create your own # hashtag</li>
+                <li>Submit button will send your comment to Twitter's screen for log in</li>
+                <li>You must have your own Twitter account to use this site</li>
+                <li>Be aware of Twitter's policies for posting appropriate comments.</li>
+            </ul>
+            <!-- INSERT COMMENT FORM HERE-->
 
-    </div>
+        </div>
     </div>
 
     <div class="col-md-4">
@@ -215,19 +212,20 @@
 
 </div>
 
-<script src="./vendor/scripts/jquery-2.1.4.js"></script>
-<script src="./vendor/scripts/handlebars.js"></script>
-<script src="./vendor/scripts/marked.js"></script>
-<script src="./vendor/scripts/html5sql.js"></script>
-<script src="./vendor/scripts/webdb.js"></script>
-<script src="./vendor/scripts/page.js"></script>
+
+<script src="vendor/scripts/jquery-2.1.4.js"></script>
+<script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="vendor/scripts/handlebars.js"></script>
+<script src="vendor/scripts/marked.js"></script>
+<script src="vendor/scripts/html5sql.js"></script>
+<script src="vendor/scripts/webdb.js"></script>
+<script src="vendor/scripts/page.js"></script>
 
 <script src="./js/aboutController.js"></script>
 <script src="./js/controller.js"></script>
 <script src="./js/repo.js"></script>
 <script src="./js/view.js"></script>
 <script src="./js/routes.js"></script>
-
 </body>
 
 </html>
