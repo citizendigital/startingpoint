@@ -56,5 +56,9 @@
         ).focus();
     };
 
+    formController.watchTwitterUser = function(){
+        
+    };
+
     module.formController = formController;
 })(window);
