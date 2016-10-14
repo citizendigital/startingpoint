@@ -1,12 +1,12 @@
 page('/', function(){
 
     tweetsController.init(mainView.init);
+    formController.init();
 });
 
 page('/about', function() {
     mainView.about();
     tweetsController.init();
-    formController.init();
 });
 
 page('/about', function() {
