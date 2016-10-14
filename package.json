@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/citizendigital/startingpoint#readme",
   "devDependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "twitter": "^1.4.0"
   },
   "dependencies": {
     "express": "^4.14.0",
