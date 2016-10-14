@@ -13,6 +13,7 @@
         $('#ourTeam').hide();
         $('#commentForm').hide();
         $('#tweetsPool').show();
+
     };
 
     mainView.about = function () {
@@ -35,5 +36,6 @@
         $('#ourTeam').hide();
         $('#commentForm').show();
     };
+    
     module.mainView = mainView;
 })(window);

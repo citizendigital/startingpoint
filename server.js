@@ -13,10 +13,21 @@ var requestProxy = require('express-request-proxy'),
 
 app.use(express.static('./'));
 
-app.get('/*', function(request, response) {
+app.get('/', function(request, response) {
     console.log('New request:', request.url);
     response.sendFile('index.html', { root: '.' });
+});
 
+app.get('/about', function(req, res){
+    res.sendfile('index.html');
+});
+
+app.get('/team', function(req, res){
+    res.sendfile('index.html');
+});
+
+app.get('/form', function(req, res){
+    res.sendfile('index.html');
 });
 
 app.listen(port, function() {
