@@ -1,5 +1,4 @@
 page('/', function(){
-    // mainController.index();
     tweetsController.init(mainView.init);
 });
 page('/about', function() {
@@ -12,6 +11,5 @@ page('/team', function() {
     mainView.team();
 });
 
-//  Activate page.js!
 page();
 

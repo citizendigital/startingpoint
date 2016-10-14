@@ -13,7 +13,7 @@ var requestProxy = require('express-request-proxy'),
 
 app.use(express.static('./'));
 
-app.get('/', function(request, response) {
+app.get('/*', function(request, response) {
     console.log('New request:', request.url);
     response.sendFile('index.html', { root: '.' });
 
@@ -26,7 +26,6 @@ app.listen(port, function() {
 
 // Gets (collection) entries associated with citizendigital_
 app.get('/collection', function(req, res) {
-    console.log(process.env.TWITTER_TOKEN_SECRET);
     var params = {id: 'custom-786661844542902272', q:'node.js'};
     client.get('collections/entries', params, function(error, tweets, response) {
         if (!error) {

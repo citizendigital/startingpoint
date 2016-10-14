@@ -28,5 +28,12 @@
         $('#aboutThisSite').hide();
         $('#ourTeam').show();
     };
+
+    mainView.addIssue = function () {
+        $('#tweetsPool').hide();
+        $('#aboutThisSite').hide();
+        $('#ourTeam').hide();
+        $('#commentForm').show();
+    };
     module.mainView = mainView;
 })(window);
