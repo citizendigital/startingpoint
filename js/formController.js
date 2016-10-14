@@ -2,11 +2,38 @@
     var formController = {};
     formController.data = {};
 
+    formController.init =  function(){
+        $('#btn_Submit').on('click', function(){
+            console.log('Click!');
+            // Gather data
+            formController.data = formController.gatherData();
+
+            // Launch and populate Twitter tab
+            formController.formToTwitter();
+
+            // Query API for username
+            $.get('/timeline/' + formController.data.name, function(data){
+                console.log(data);
+                // tweetsController.all.push(data);
+            });
+
+            // Next steps...
+            // Monitor users stream until a new tweet is published
+            // Compare that tweet to text of our issue
+            // If matching, add that tweet to our collection
+            // Notify of success
+            // Return to main page view
+
+            // Q: Store userID and time of tweet?
+            // Don't allow any more than one submission per x-hours
+        });
+    };
+
     formController.gatherData = function(){
-        var textHashArr = this.parseData($('#textInput').val());
+        var textHashArr = this.parseData($('#input_Text').val());
 
         return {
-            name: $('#userName').val(),
+            name: $('#usr').val(),
             text: encodeURIComponent(textHashArr[0]),
             hashtags: encodeURIComponent(textHashArr[1])
         };
@@ -28,30 +55,6 @@
             '_blank'
         ).focus();
     };
-
-    $('#btnForm').on('click', function(){
-        // Gather data
-        formController.data = formController.gatherData();
-
-        // Launch and populate Twitter tab
-        formController.formToTwitter();
-
-        // Query API for username
-        $.get('/timeline/' + formController.data.name, function(data){
-            console.log(data);
-            // tweetsController.all.push(data);
-        });
-
-        // Monitor users stream until a new tweet is published
-        // Compare that tweet to text of our issue
-        // If matching, add that tweet to our collection
-        // Notify of success
-        // Return to main page view
-
-        // Q: Store userID and time of tweet?
-        // Don't allow any more than one submission per x-hours
-    });
-
 
     module.formController = formController;
 })(window);
