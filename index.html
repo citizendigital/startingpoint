@@ -128,6 +128,7 @@
                 can get involved with the some of the most current issues happening now in Portland, share your voice
                 and
                 make an impact.</p>
+            =
             Please share this site with your friends, family, colleagues and your community.</p>
 
             <ul>What the user can do on this site</ul>
@@ -158,6 +159,12 @@
                 posting to Twitter via this site.</p>
         </div>
 
+
+        <!-------------------- **************  --------------------->
+        <!-------------------- Team Page       --------------------->
+        <!-------------------- **************  --------------------->
+
+
         <div id="Our Team">
             <h1>Our Team</h1>
 
@@ -186,17 +193,16 @@
         </div>
 
 
-        <!-------------------- **************  --------------------->
-        <!-------------------- Comment Form    --------------------->
-        <!-------------------- **************  --------------------->
+        <!-------------------- *******************  --------------------->
+        <!-------------------- Comment Form Section --------------------->
+        <!-------------------- *******************  --------------------->
 
 
         <div id="commentForm">
             <h1>Comment Form</h1>
 
             <p>Please use the form below to write your comments, issue or concerns about a particular social justice
-                issue
-                in the Portland Metropolatian area.
+                issue in the Portland Metropolatian area.
                 <br/>
             <ul> Guidelines for posting on this site
                 <li>The character limit is set at 140 characters</li>
@@ -206,7 +212,19 @@
                 <li>You must have your own Twitter account to use this site</li>
                 <li>Be aware of Twitter's policies for posting appropriate comments.</li>
             </ul>
-            <!-- INSERT COMMENT FORM HERE-->
+
+            <!-- COMMENT FORM -->
+
+            <form action="http://www.twitter.com/comments.php" method="post">
+                <div class="form-group">
+                    <label for="usr">Twitter Username:</label>
+                    <input type="text" class="form-control" id="usr">
+                    <br>
+                    <textarea class="form-control" name="comments" cols="80" rows="5" maxlength="140">Enter your comments...</textarea>
+                    <br>
+                    <a href="https://twitter.com/intent/tweet?text=&" target="_blank"><button class="btn btn-default">Submit</button></a>
+                </div>
+            </form>
 
         </div>
     </div>
@@ -219,7 +237,6 @@
 
         </div>
     </div>
-
 </div>
 
 
