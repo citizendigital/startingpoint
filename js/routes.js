@@ -1,17 +1,24 @@
 page('/', function(){
-    // mainController.index();
-    tweetsController.init();
+
+    tweetsController.init(mainView.init);
     formController.init();
 });
+
+page('/about', function() {
+    mainView.about();
+    tweetsController.init();
+});
+
 page('/about', function() {
     aboutController.index();
 });
+
 page('/form', function() {
     formController.index();
 });
+
 page('/team', function() {
-    teamController.index();
+    mainView.team();
 });
 
-//  Activate page.js!
 page();

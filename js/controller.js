@@ -2,7 +2,7 @@
     var tweetsController = {};
     tweetsController.all = [];
 
-    tweetsController.init = function() {
+    tweetsController.init = function(callback) {
         if(tweetsController.all.length !== 0) {
             tweetsController.all = [];
         }
@@ -11,6 +11,9 @@
             console.log(data);
             tweetsController.all.push(data.objects);
         });
+
+        // add initial view render for index page
+        callback();
     };
 
     tweetsController.newestTweets = function () {
