@@ -1,9 +1,10 @@
 page('/', function(){
     // mainController.index();
     tweetsController.init();
+    formController.init();
 });
 page('/about', function() {
-    aboutController.index()
+    aboutController.index();
 });
 page('/form', function() {
     formController.index();
@@ -14,4 +15,3 @@ page('/team', function() {
 
 //  Activate page.js!
 page();
-

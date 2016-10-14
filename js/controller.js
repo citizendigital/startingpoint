@@ -10,7 +10,7 @@
         $.get('/collection', function(data){
             console.log(data);
             tweetsController.all.push(data.objects);
-        })
+        });
     };
 
     tweetsController.newestTweets = function () {
