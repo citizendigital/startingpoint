@@ -2,138 +2,183 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
     <title>Citizen Digital</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand|Roboto" rel="stylesheet">
+
     <link rel="stylesheet" href="./vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/layout.css">
     <link rel="stylesheet" href="./css/modules.css">
 
-
+    <script id="tweetTemplate" type="text/x-handlebars-template">
+        <div class="sectionWrapper">
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <!-- {{topic}} -->
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <!--{{user}}-->
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src={{imgUrl}} alt="">
+                </div>
+            </div>
+        </div>
+    </script>
 </head>
-  <body>
-  <nav class="mainMenu">                       <!--Add a button for the comment form-->
 
-    <!--<i class="icon-menu"></i>-->          <!--do we want to add icons to main pg-->
-    <ul>
-      <li class="tab" data-content="Home"><a href="/" class="icon-home3"> Home</a></li>
-      <li class="tab" data-content="about this site"><a href="/siteinfo" class="icon-address-book"> About This Site</a></li>
-      <li class="tab" data-content="ourteam"><a href="/about" class="icon-address-book"> Our Team </a></li>
-      <!--<li class="tab" data-content="TBA"><a href="/TBA" class="icon-address-book"> TBA</a></li>--> <!--Placeholder - may or may not useTBA-->
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Citizen Digital</a>
+            </div>
 
-    </ul>
-  </nav>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/about">About This Site</a></li>
+                    <li><a href="/team">Our Team</a></li>
 
-  <div class="content-placeholder"></div>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid --></div>
+</nav>
 
-  <h1>Site Heading-TBA</h1>
-<br />
-  <div id="mainSection">
-    <div id="about this site">
-        <h1> About this Site</h1>
-          <br />
-          <p> Welcome to this site</p>
-
-          <p>  The _ADD SITE NAME HERE is a project that takes an interesting look at some social justice issues in the Portland Metropolitan area.
-          According to The Atlantic,May 17, 2016, "Can Portland Avoid Repeating San Francisco's Mistakes?", "the city got "discovered, people started flocking here, the tech companies came, and Portland became more expensive.
-          Oregon has been the top destination for people to move to for three years in a row."
-          Now, housing prices are skyrocketing... more people move in and new high-rises and apartment complexes go up.
-          Apartment rents are risig at an annualized rate of 14 percent, one of th largest increases in the country.
-        </p>
-          <br />
-          <p> We encourage you to visit the site, read about the team that developed this social justice app for ease of use. Find out how you
-            can get involved with the some of the most current issues happening now in Portland, share your voice and make an impact.</p>
-            Please share this site with your friends, family, colleagues and your community.</p>
-
-        <ul>What the user can do on this site</ul>
-
-              <li>On this site the user has the opportunity to voice their concerns, issues and/or possible solution. With one click the user's voice is instantly shared on Twitter for others in and out of the Portland area to read and support.</li>
-
-
-
-
-        <ul>Possible uses for this site</ul>
-
-            <li>The users visting the site should have their own personal Twitter account in order to post their comments.</li>
-            <li>The users are encouraged to share this site with others.</li>
-
-
-          <p>Disclamier:
-
-          <br />
-          The Development Team of this site welcomes your participation and encourages you to express your views.
-          The Development Team is not responsible for the content of individual users' post placed on Twitter.
-          Please excercise good judgment, appropriate language, and personal/professional conduct and courtsey when posting to Twitter via this site.</p>
-
-        <br />
-
-
+<div class="container">
+    <div class="jumbotron">
+        <h1>Starting Point</h1>
     </div>
+</div>
 
-    <div id="Our Team">
-      <h1>Our Team</h1>
+<!-- This container holds together the formatting. Everything other than the nav and jumbotron should be inside this div -->
+<div class="container">
 
-        <p> The team that developed this site brings a wealth of knowledge, skill, and abilities to this project.
-            Each team member has contributed unique talents to the design, critical thought process and provided situational leadership through-out the project's development phase.
-        </p>
+    <div class="col-lg-8" id="columnLeft">
 
-        <img src= "https://thumbs.dreamstime.com/x/multi-ethnic-group-people-us-concept-41750015.jpg"/><br /> <!--find a stock photo to insert here-->
-     <br />
-              <p>CA Cruz-insert bio here</p>
+        <!-- Test Template -->
+        <div id="sectionWrapper">
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
 
-      <br />
+                        Protesting The Police
+                    </div>
+                    <div class="panel-body">
 
-              <p>J Dhabolt- insert bio here</p>
+                        Tweet Test. BLAH BLAH.
 
-      <br />
-              <p> J Walz   - insert bio here</p>
+                        Jon Walz
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!--<img src={{imgUrl}} alt="">-->
+            </div>
+        </div>
 
-      <br />
-              <p> R Joe - insert bio here</p>
 
-      <br />
+        <!--About Section-->
+        <div id="about this site">
+            <h1> About this Site</h1>
+            <br/>
+            <h2> Welcome to this site</h2>
+
+            <p>The _ADD SITE NAME HERE is a project that takes an interesting look at some social justice issues in the Portland Metropolatian area. According to The Atlantic,May 17, 2016, "Can Portland Avoid Repeating San Francisco's Mistakes?", "the city got "discovered, people started flocking here, the tech companies came, and Portland became more expensive. Oregon has been the top destination for people to move to for three years in a row."</p>
+            <p>Now, housing prices are skyrocketing... more people move in and new high-rises and apartment complexes go up. Apartment rents are risig at an annualized rate of 14 percent, one of th largest increases in the country.</p>
+            <p>We encourage you to visit the site, read about the team that developed this social justice app for ease of use. Find out how you can get involved with the some of the most current issues happening now in Portland, share your voice and make an impact.</p>
+            <p>Please share this site with your friends, family, colleagues and your community.</p>
+
+            <h2>What the user can do on this site</h2>
+            <p>On this site the user has the opportunity to voice their concerns, issues and/or possible solution. With one click the user's voice is instantly shared on Twitter for others in and out of the Portland area to read and support.</p>
+
+            <h2>Possible uses for this site</h2>
+            <p>The users visting the site should have their own personal Twitter account in order to post their comments.The users are encouraged to share this site with others.</p>
+
+
+            <h2>Disclamier:</h2>
+            <p>The Development Team of this site welcomes your participation and encourages you to express your views. The Development Team is not responsible for the content of individual users' post placed on Twitter. Please excercise good judgment, appropriate language, and personal/professional conduct and courtsey when posting to Twitter via this site.</p>
+        </div>
+
+        <div id="Our Team">
+            <h1>Our Team</h1>
+            <p>The team that developed this site brings a wealth of knowledge, skill, and abilities to this project. Each team member has contributed unique talents to the design, critical thought process and provided situational leadership through-out the project's development phase.</p>
+
+            <img src="https://thumbs.dreamstime.com/x/multi-ethnic-group-people-us-concept-41750015.jpg"/><br/>
+            <!--find a stock photo to insert here-->
+            <br/>
+            <p>CA Cruz-insert bio here</p>
+            <br/>
+            <p>J Dhabolt- insert bio here</p>
+            <br/>
+            <p> J Walz - Just a tall guy from a small town</p>
+            <br/>
+            <p> R Joe - insert bio here</p>
+            <br/>
+        </div>
 
       <div id="Comment Form">
         <h1>Comment Form</h1>
+        <p>Please use the form below to write your comments, issue or concerns about a particular social justice issue in the Portland Metropolatian area.</p>
 
-          <p>Please use the form below to write your comments, issue or concerns about a particular social justice issue in the Portland Metropolatian area.
-          <br />
-          <ul> Guidelines for posting on this site
+        <ul> Guidelines for posting on this site
             <li>The character limit is set at 140 characters</li>
             <li>Be clear and concise when posting your comments here</li>
             <li>Create your own # hashtag</li>
             <li>Submit button will send your comment to Twitter's screen for log in</li>
             <li>You must have your own Twitter account to use this site</li>
             <li>Be aware of Twitter's policies for posting appropriate comments.</li>
-          </ul>
-      <!-- INSERT COMMENT FORM HERE-->
-      <form action="http://www.twitter.com/comments.php" method="post">      <!--form contents does not go to Twitter on submit-->
-        <textarea name= "comments" cols="80" rows="5" maxlength="140">Enter your comments...</textarea>
-         <a href="https://twitter.com/intent/tweet?text="     +       "&hashtags=       +      "target="_blank">Submit</a>
-     </form>                                                     <!-- link works goes to Twitter-->
-
-
+        </ul>
+      <!-- COMMENT FORM-->
+            <form action="http://www.twitter.com/comments.php" method="post">
+                <textarea name= "comments" cols="80" rows="5" maxlength="140">Enter your comments...</textarea>
+                <a href="https://twitter.com/intent/tweet?text=Sample+Text+Here&hashtags=Sample+HashTags+Here" target="_blank">Submit</a>
+            </form>
+        </div>
     </div>
 
-    <script type="text/javascript.js"></script>
-    <script src="./vendor/scripts/jquery-2.1.4.js"></script>
-    <script src="./vendor/scripts/page.js"></script>
-    <script src="./js/aboutController.js"></script>
-    <script src="./js/routes.js"></script>
+    <div class="col-md-4">
 
-   <script>
-  $(document).ready(function(){
-    $.get ("about this site"),function(data){
-      $("#about").html(data);
-    })
-  });
-  </script>
+        <!-- Blog Search Well -->
+        <div class="well">
+            <h2>Top 5 Topics</h2>
+        </div>
+    </div>
 
-<br />
+</div>
 
 
+<script src="vendor/scripts/jquery-2.1.4.js"></script>
+<script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="vendor/scripts/handlebars.js"></script>
+<script src="vendor/scripts/marked.js"></script>
+<script src="vendor/scripts/html5sql.js"></script>
+<script src="vendor/scripts/webdb.js"></script>
+<script src="vendor/scripts/page.js"></script>
 
-
+<script src="./js/aboutController.js"></script>
+<script src="./js/controller.js"></script>
+<script src="./js/repo.js"></script>
+<script src="./js/view.js"></script>
+<script src="./js/routes.js"></script>
 </body>
 
 </html>
