@@ -1,5 +1,6 @@
 page('/', function(){
-    mainController.index();
+    // mainController.index();
+    tweetsController.init();
 });
 page('/about', function() {
     aboutController.index()
