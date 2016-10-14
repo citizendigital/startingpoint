@@ -48,17 +48,17 @@ app.get('/collection', function(req, res) {
     });
 });
 
-// Gets timeline (list of tweets) from user 'citizendigital_'
-// app.get('*/timeline', function(request, response) {
-//     var params = {screen_name: 'citizendigital_'};
-//
-//     client.get('statuses/user_timeline', params, function(error, tweets, response) {
-//         if (!error) {
-//             console.log(tweets);
-//             response.send(tweets);
-//         }
-//     });
-// });
+// // Gets timeline (list of tweets) from a username
+app.get('*/timeline/:username', function(req, res) {
+    var params = {screen_name: req.params.username};
+
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+        if (!error) {
+            console.log(tweets);
+            res.send(tweets);
+        }
+    });
+});
 
 
 // // Output a stream of tweets (realtime) with keyword 'pdx'

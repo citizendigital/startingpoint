@@ -99,29 +99,40 @@
             </div>
         </div>
 
+        <!----------------------------- ************* ----------------------------->
+        <!----------------------------- About Section ----------------------------->
+        <!----------------------------- ************* ----------------------------->
 
-        <!--About Section-->
-        <div id="aboutThisSite">
-            <h1> About this Site</h1>
+
+        <div id="about">
+            <h1>About this Site</h1>
             <br/>
             <h2> Welcome to this site</h2>
 
-            <p>The _ADD SITE NAME HERE is a project that takes an interesting look at some social justice issues in the
-                Portland Metropolatian area. According to The Atlantic,May 17, 2016, "Can Portland Avoid Repeating San
+            <p>The _ADD SITE NAME HERE is a project that takes an interesting look at some social justice issues in
+                the
+                Portland Metropolatian area. According to The Atlantic,May 17, 2016, "Can Portland Avoid Repeating
+                San
                 Francisco's Mistakes?", "the city got "discovered, people started flocking here, the tech companies
-                came, and Portland became more expensive. Oregon has been the top destination for people to move to for
+                came, and Portland became more expensive. Oregon has been the top destination for people to move to
+                for
                 three years in a row."</p>
-            <p>Now, housing prices are skyrocketing... more people move in and new high-rises and apartment complexes go
-                up. Apartment rents are risig at an annualized rate of 14 percent, one of th largest increases in the
+            <p>Now, housing prices are skyrocketing... more people move in and new high-rises and apartment
+                complexes go
+                up. Apartment rents are risig at an annualized rate of 14 percent, one of th largest increases in
+                the
                 country.</p>
-            <p>We encourage you to visit the site, read about the team that developed this social justice app for ease
+            <p>We encourage you to visit the site, read about the team that developed this social justice app for
+                ease
                 of use. Find out how you can get involved with the some of the most current issues happening now in
                 Portland, share your voice and make an impact.</p>
             <p>Please share this site with your friends, family, colleagues and your community.</p>
 
             <h2>What the user can do on this site</h2>
-            <p>On this site the user has the opportunity to voice their concerns, issues and/or possible solution. With
-                one click the user's voice is instantly shared on Twitter for others in and out of the Portland area to
+            <p>On this site the user has the opportunity to voice their concerns, issues and/or possible solution.
+                With
+                one click the user's voice is instantly shared on Twitter for others in and out of the Portland area
+                to
                 read and support.</p>
 
             <h2>Possible uses for this site</h2>
@@ -130,13 +141,19 @@
 
 
             <h2>Disclamier:</h2>
-            <p>The Development Team of this site welcomes your participation and encourages you to express your views.
+            <p>The Development Team of this site welcomes your participation and encourages you to express your
+                views.
                 The Development Team is not responsible for the content of individual users' post placed on Twitter.
                 Please excercise good judgment, appropriate language, and personal/professional conduct and courtsey
                 when posting to Twitter via this site.</p>
         </div>
 
-        <div id="ourTeam">
+        <!-------------------- **************  --------------------->
+        <!-------------------- Team Page       --------------------->
+        <!-------------------- **************  --------------------->
+
+
+        <div id="team">
             <h1>Our Team</h1>
             <p>The team that developed this site brings a wealth of knowledge, skill, and abilities to this project.
                 Each team member has contributed unique talents to the design, critical thought process and provided
@@ -155,10 +172,15 @@
             <br/>
         </div>
 
-        <div id="commentForm">
+        <!-------------------- *******************  --------------------->
+        <!-------------------- Comment Form Section --------------------->
+        <!-------------------- *******************  --------------------->
+
+
+        <div id="form">
             <h1>Comment Form</h1>
-            <p>Please use the form below to write your comments, issue or concerns about a particular social justice
-                issue in the Portland Metropolatian area.</p>
+            <p>Please use the form below to write your comments, issue or concerns about a particular social
+                justice issue in the Portland Metropolatian area.</p>
 
             <ul> Guidelines for posting on this site
                 <li>The character limit is set at 140 characters</li>
@@ -168,14 +190,24 @@
                 <li>You must have your own Twitter account to use this site</li>
                 <li>Be aware of Twitter's policies for posting appropriate comments.</li>
             </ul>
-            <!-- COMMENT FORM-->
+
+            <!-- COMMENT FORM -->
+
             <form action="http://www.twitter.com/comments.php" method="post">
-                <textarea name="comments" cols="80" rows="5" maxlength="140">Enter your comments...</textarea>
-                <a href="https://twitter.com/intent/tweet?text=Sample+Text+Here&hashtags=Sample+HashTags+Here"
-                   target="_blank">Submit</a>
+                <div class="form-group">
+                    <label for="usr">Twitter Username:</label>
+                    <input type="text" class="form-control" id="usr">
+                    <br>
+                    <textarea id="input_Text" class="form-control" name="comments" cols="80" rows="5"
+                              maxlength="140">Enter your comments...</textarea>
+                    <br>
+                    <button type="button" id="btn_Submit" class="btn btn-primary btn-block">Submit</button>
+                </div>
             </form>
+
         </div>
     </div>
+
 
     <div class="col-md-4">
 
@@ -184,7 +216,6 @@
             <h2>Top 5 Topics</h2>
         </div>
     </div>
-
 </div>
 
 
@@ -198,7 +229,7 @@
 
 <script src="./js/aboutController.js"></script>
 <script src="./js/controller.js"></script>
-<script src="./js/repo.js"></script>
+<script src="./js/formController.js"></script>
 <script src="./js/view.js"></script>
 <script src="./js/routes.js"></script>
 </body>

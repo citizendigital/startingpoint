@@ -9,32 +9,31 @@
     };
 
     mainView.init = function () {
-        $('#aboutThisSite').hide();
-        $('#ourTeam').hide();
-        $('#commentForm').hide();
+        $('#about').hide();
+        $('#team').hide();
+        $('#form').hide();
         $('#tweetsPool').show();
-
     };
 
     mainView.about = function () {
         $('#tweetsPool').hide();
-        $('#ourTeam').hide();
-        $('#commentForm').hide();
-        $('#aboutThisSite').show();
+        $('#team').hide();
+        $('#form').hide();
+        $('#about').show();
     };
 
     mainView.team = function () {
         $('#tweetsPool').hide();
-        $('#commentForm').hide();
-        $('#aboutThisSite').hide();
-        $('#ourTeam').show();
+        $('#form').hide();
+        $('#about').hide();
+        $('#team').show();
     };
 
     mainView.addIssue = function () {
         $('#tweetsPool').hide();
-        $('#aboutThisSite').hide();
-        $('#ourTeam').hide();
-        $('#commentForm').show();
+        $('#about').hide();
+        $('#team').hide();
+        $('#form').show();
     };
     
     module.mainView = mainView;
