@@ -3,11 +3,6 @@
     formController.data = {};
 
     formController.init =  function(){
-
-        $("#issueButton").on('click', function(){
-            mainView.addIssue();
-        });
-
         $('#btn_Submit').on('click', function(){
             console.log('Click!');
             // Gather data
@@ -16,11 +11,13 @@
             // Launch and populate Twitter tab
             formController.formToTwitter();
 
-            // Query API for username
-            $.get('/timeline/' + formController.data.name, function(data){
-                console.log(data);
-                // tweetsController.all.push(data);
-            });
+            // // Query API for username
+            // $.get('/timeline/' + formController.data.name, function(data){
+            //     console.log(data);
+            //     // tweetsController.all.push(data);
+            // });
+
+            formController.getUserTimeline(formController.data.name);
 
             // Next steps...
             // Monitor users stream until a new tweet is published
@@ -31,6 +28,13 @@
 
             // Q: Store userID and time of tweet?
             // Don't allow any more than one submission per x-hours
+        });
+    };
+
+    formController.getUserTimeline = function(userName){
+        // Query API for username
+        $.get('/timeline/' + userName, function(data){
+            console.log(data);
         });
     };
 
@@ -62,7 +66,11 @@
     };
 
     formController.watchTwitterUser = function(){
-        
+
+    };
+
+    formController.endWatch = function(){
+
     };
 
     module.formController = formController;
