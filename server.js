@@ -38,7 +38,22 @@ app.listen(port, function() {
 // Gets (collection) entries associated with citizendigital_
 app.get('/collection', function(req, res) {
     var params = {id: 'custom-786661844542902272', q:'node.js'};
+
     client.get('collections/entries', params, function(error, tweets, response) {
+        if (!error) {
+            console.log(tweets);
+            res.send(tweets);
+        } else {
+            console.log(response.toJSON());
+        }
+    });
+});
+
+// Post user tweet to our collection
+app.post('/collection/:tweet_id', function(req, res) {
+    var params = {id: 'custom-786661844542902272', tweet_id: req.params.tweet_id, q:'node.js'};
+
+    client.post('collections/entries/add', params, function(error, tweets, response) {
         if (!error) {
             console.log(tweets);
             res.send(tweets);

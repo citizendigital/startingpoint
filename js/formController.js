@@ -9,7 +9,6 @@
         });
 
         $('#btn_Submit').on('click', function(){
-            console.log('Click!');
             // Gather data
             formController.data = formController.gatherData();
 
@@ -30,12 +29,17 @@
                     name: formController.data.name, // Username
                     count: 5, // How many to fetch
                     since_id: formController.twitterData[0].id // This is returned from initial call
-                }, function(newTweet){
-                    if(newTweet.length){
-                        alert("There's been a new tweet!");
-                        // Stop timer
-                        clearInterval(watch);
-                        alert("Stopping watch!");
+                }, function(newTweetArr){
+                    if(newTweetArr.length){//newtweet is not defined
+                        console.log("There's been a new tweet!");
+
+                        if(formController.compare(newTweetArr)){
+                            console.log("We have a match!");
+                            console.log("Stopping watch!");
+                            // Stop timer
+                            clearInterval(watch);
+                            formController.addToCollection(newTweetArr[0], console.log);
+                        }
                     }
                 });
             }
@@ -43,16 +47,25 @@
             // Launch and populate Twitter tab
             formController.formToTwitter();
 
-
-            // Next steps...
-            // Monitor users stream until a new tweet is published
-            // Compare that tweet to text of our issue
-            // If matching, add that tweet to our collection
-            // Notify of success
-            // Return to main page view
-
             // Q: Store userID and time of tweet?
             // Don't allow any more than one submission per x-hours
+        });
+    };
+
+    formController.compare = function(newTweetArr){
+        // console.log(tweet);
+        if(newTweetArr[0].text === decodeURIComponent(formController.data.text)){
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    formController.addToCollection = function(newTweet, callback){
+        $.post('/collection/' + newTweet.id_str, function(data){
+            // console.log(data);
+            // return data;
+            callback(data);
         });
     };
 
@@ -60,7 +73,6 @@
         // Query API for username
         $.get('/timeline/' + paramsObj.name + '/' + paramsObj.count + '/' + paramsObj.since_id, function(data){
             console.log(data);
-            // this should be limited to top 3-5, or customizable
             // return data;
             callback(data);
         });
@@ -97,13 +109,7 @@
     formController.watchTwitterUser = function(paramsObj, callback){
         watch = setInterval(function(){
             formController.getUserTimeline(paramsObj, callback);
-            // if user and text message match stored data,
-            // add that tweet to our collection
         }, 10000);
-    };
-
-    formController.endWatch = function(){
-
     };
 
     module.formController = formController;
