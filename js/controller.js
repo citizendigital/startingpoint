@@ -31,9 +31,13 @@
             // console.log("Tweets arr obj: ", obj.tweets);
             reObj = {};
             reObj["text"] = obj.text;
-            reObj["date"] = moment(obj.created_at).format('MMMM Do YYYY, h:mm:ss a'); // the moment.js library converts the time to a readable format
+
+            // the moment.js library converts the date string to a readable format
+            reObj["date"] = moment(obj.created_at).format('MMMM Do YYYY, h:mm:ss a');
 
             return reObj;
+        }).sort(function(a, b){
+            return a.date < b.date;
         });
     };
 

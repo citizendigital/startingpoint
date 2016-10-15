@@ -4,16 +4,13 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    color: #773449;
 }
 
 h1, h2, h3, h4, h5 {
     font-family: 'Quicksand', sans-serif;
 }
 
-.navbar {
-    background-color: #FAEBEE;
-}
-
-.jumbotron {
-    border-radius: 0;
+a {
+    color: #dfbed8;
 }

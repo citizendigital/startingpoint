@@ -5,10 +5,11 @@
         $('#about').hide();
         $('#team').hide();
         $('#form').hide();
-        $('#tweetsPool').show();
+        $('#tweetsPool').show("fold", 1000 );
     };
 
     mainView.about = function () {
+        $('#sortingMenu').hide();
         $('#tweetsPool').hide();
         $('#team').hide();
         $('#form').hide();
@@ -16,6 +17,7 @@
     };
 
     mainView.team = function () {
+        $('#sortingMenu').hide();
         $('#tweetsPool').hide();
         $('#form').hide();
         $('#about').hide();
@@ -23,6 +25,7 @@
     };
 
     mainView.addIssue = function () {
+        $('#sortingMenu').hide();
         $('#tweetsPool').hide();
         $('#about').hide();
         $('#team').hide();

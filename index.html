@@ -63,11 +63,13 @@
         </div><!-- /.container-fluid --></div>
 </nav>
 
-<div class="container bgBlue">
-    <div class="jumbotron" id="jumboName">
-        <h1>Starting Point</h1>
-        <br>
-        <button type="button" class="btn btn-default" id="issueButton">Add an Issue</button>
+<div class="container-fluid bgBlue">
+    <div class="page-header">
+        <div class="jumbotron" id="jumboName">
+            <h1>Starting Point</h1>
+            <br>
+            <button type="button" class="btn btn-default" id="issueButton">Add an Issue</button>
+        </div>
     </div>
 </div>
 
@@ -75,7 +77,10 @@
 <div class="container">
 
     <div class="col-lg-8" id="columnLeft">
-
+        <ul class="nav nav-pills text-right" id="sortingMenu">
+            <li role="presentation"><a href="#">Newest Tweets</a></li>
+            <li role="presentation"><a href="#">Popular Tweets</a></li>
+        </ul>
         <!-- Template Renders here -->
         <div id="tweetsPool">
 
@@ -204,6 +209,7 @@
 
 
 <script src="vendor/scripts/jquery-2.1.4.js"></script>
+<script src="vendor/scripts/jquery-ui.min.css"></script>
 <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="vendor/moment.js"></script>
 <script src="vendor/scripts/handlebars.js"></script>
