@@ -3,6 +3,11 @@
     formController.data = {};
 
     formController.init =  function(){
+
+        $("#issueButton").on('click', function(){
+            mainView.addIssue();
+        });
+
         $('#btn_Submit').on('click', function(){
             console.log('Click!');
             // Gather data
