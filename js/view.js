@@ -7,10 +7,6 @@
         $('#form').hide();
         $('#tweetsPool').show();
 
-        VCountdown({
-            target: '.countdown',
-            maxChars: 160
-        });
     };
 
     mainView.about = function () {

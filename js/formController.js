@@ -4,6 +4,13 @@
 
     formController.init =  function(){
 
+        // character counter
+        $('#input_Text').keyup(function count(){
+            var characters = $('#input_Text').val().length;
+            var counter = 140 - characters;
+            $("#count").html(counter);
+        });
+
         $("#issueButton").on('click', function(){
             mainView.addIssue();
         });
