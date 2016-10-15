@@ -49,8 +49,12 @@ app.get('/collection', function(req, res) {
 });
 
 // // Gets timeline (list of tweets) from a username
-app.get('*/timeline/:username', function(req, res) {
-    var params = {screen_name: req.params.username};
+app.get('*/timeline/:username/:count/:since_id', function(req, res) {
+    var params = {
+        screen_name: req.params.username,
+        count: req.params.count,
+        since_id: req.params.since_id
+    };
 
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
         if (!error) {
