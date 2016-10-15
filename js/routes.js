@@ -6,7 +6,6 @@ page('/', function(){
 
 page('/about', function() {
     mainView.about();
-    tweetsController.init();
 });
 
 page('/about', function() {

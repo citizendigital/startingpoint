@@ -34,7 +34,6 @@ app.listen(port, function() {
     console.log('Server started on port ' + port + '!');
 });
 
-
 // Gets (collection) entries associated with citizendigital_
 app.get('/collection', function(req, res) {
     var params = {id: 'custom-786661844542902272', q:'node.js'};

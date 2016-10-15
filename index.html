@@ -21,16 +21,16 @@
             <div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <!-- {{topic}} -->
+                        {{date}}
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <!--{{user}}-->
+                            {{text}}
                         </div>
                     </div>
                 </div>
                 <div>
-                    <img src={{imgUrl}} alt="">
+                    <!--<img src={{imgUrl}} alt="">-->
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
         </div><!-- /.container-fluid --></div>
 </nav>
 
-<div class="container">
+<div class="container bgBlue">
     <div class="jumbotron" id="jumboName">
         <h1>Starting Point</h1>
         <br>
@@ -76,27 +76,9 @@
 
     <div class="col-lg-8" id="columnLeft">
 
-        <!-- Test Template -->
+        <!-- Template Renders here -->
         <div id="tweetsPool">
-            <div class="testerTemplate">
-                <div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
 
-                            Protesting The Police
-                        </div>
-                        <div class="panel-body">
-
-                            Tweet Test. BLAH BLAH.
-
-                            Jon Walz
-                        </div>
-                    </div>
-                </div>
-                <div>
-                <!--<img src={{imgUrl}} alt="">-->
-                </div>
-            </div>
         </div>
 
         <!----------------------------- ************* ----------------------------->
@@ -197,9 +179,11 @@
                 <div class="form-group">
                     <label for="usr">Twitter Username:</label>
                     <input type="text" class="form-control" id="usr">
+
                     <br>
-                    <textarea id="input_Text" class="form-control" name="comments" cols="80" rows="5"
-                              maxlength="140">Enter your comments...</textarea>
+                    <textarea id="input_Text" class="form-control countdown" name="comments" cols="80" rows="5"
+                              maxlength="140" placeholder="Enter your comments..."></textarea>
+                    <div class="well well-sm">Characters Left: <span id="count"></span></div>
                     <br>
                     <button type="button" id="btn_Submit" class="btn btn-primary btn-block">Submit</button>
                 </div>
@@ -221,6 +205,7 @@
 
 <script src="vendor/scripts/jquery-2.1.4.js"></script>
 <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="vendor/moment.js"></script>
 <script src="vendor/scripts/handlebars.js"></script>
 <script src="vendor/scripts/marked.js"></script>
 <script src="vendor/scripts/html5sql.js"></script>
@@ -231,6 +216,7 @@
 <script src="./js/controller.js"></script>
 <script src="./js/formController.js"></script>
 <script src="./js/view.js"></script>
+<script src="./js/tweetView.js"></script>
 <script src="./js/routes.js"></script>
 </body>
 
