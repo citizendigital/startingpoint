@@ -6,7 +6,6 @@
         $('#team').hide();
         $('#form').hide();
         $('#tweetsPool').show();
-
     };
 
     mainView.about = function () {
