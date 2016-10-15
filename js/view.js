@@ -2,34 +2,35 @@
     mainView = {};
 
     mainView.init = function () {
-        $('#about').hide();
-        $('#team').hide();
-        $('#form').hide();
-        $('#tweetsPool').show("fold", 1000 );
+        $('#about').fadeOut(500);
+        $('#team').fadeOut(500);
+        $('#form').fadeOut(500);
+        $('#sortingMenu').show();
+        $('#tweetsPool').fadeIn(500)
     };
 
     mainView.about = function () {
-        $('#sortingMenu').hide();
-        $('#tweetsPool').hide();
-        $('#team').hide();
-        $('#form').hide();
-        $('#about').show();
+        $('#sortingMenu').fadeOut(500);
+        $('#tweetsPool').fadeOut(500);
+        $('#team').fadeOut(500);
+        $('#form').fadeOut(500);
+        $('#about').fadeIn(500);
     };
 
     mainView.team = function () {
-        $('#sortingMenu').hide();
-        $('#tweetsPool').hide();
-        $('#form').hide();
-        $('#about').hide();
-        $('#team').show();
+        $('#sortingMenu').fadeOut(500);
+        $('#tweetsPool').fadeOut(500);
+        $('#form').fadeOut(500);
+        $('#about').fadeOut(500);
+        $('#team').fadeIn(500);
     };
 
     mainView.addIssue = function () {
-        $('#sortingMenu').hide();
-        $('#tweetsPool').hide();
-        $('#about').hide();
-        $('#team').hide();
-        $('#form').show();
+        $('#sortingMenu').fadeOut(500);
+        $('#tweetsPool').fadeOut(500);
+        $('#about').fadeOut(500);
+        $('#team').fadeOut(500);
+        $('#form').fadeIn(500);
     };
     
     module.mainView = mainView;
