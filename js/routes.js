@@ -20,4 +20,8 @@ page('/team', function() {
     mainView.team();
 });
 
+page('/newest', function () {
+
+});
+
 page();
