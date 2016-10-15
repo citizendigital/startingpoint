@@ -1,3 +1,7 @@
+html {
+    overflow: scroll;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }

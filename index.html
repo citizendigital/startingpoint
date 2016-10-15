@@ -21,16 +21,16 @@
             <div>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <!-- {{topic}} -->
+                        <!-- {{text}} -->
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-body">
-                            <!--{{user}}-->
+                            <!--{{date}}-->
                         </div>
                     </div>
                 </div>
                 <div>
-                    <img src={{imgUrl}} alt="">
+                    <!--<img src={{imgUrl}} alt="">-->
                 </div>
             </div>
         </div>
@@ -198,7 +198,7 @@
                     <label for="usr">Twitter Username:</label>
                     <input type="text" class="form-control" id="usr">
                     <br>
-                    <textarea id="input_Text" class="form-control" name="comments" cols="80" rows="5"
+                    <textarea id="input_Text" class="form-control countdown" name="comments" cols="80" rows="5"
                               maxlength="140">Enter your comments...</textarea>
                     <br>
                     <button type="button" id="btn_Submit" class="btn btn-primary btn-block">Submit</button>
@@ -222,6 +222,7 @@
 <script src="vendor/scripts/jquery-2.1.4.js"></script>
 <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 <script src="vendor/scripts/handlebars.js"></script>
+<script src="vendor/vcountdown.min.js"></script>
 <script src="vendor/scripts/marked.js"></script>
 <script src="vendor/scripts/html5sql.js"></script>
 <script src="vendor/scripts/webdb.js"></script>
@@ -231,6 +232,7 @@
 <script src="./js/controller.js"></script>
 <script src="./js/formController.js"></script>
 <script src="./js/view.js"></script>
+<script src="./js/tweetView.js"></script>
 <script src="./js/routes.js"></script>
 </body>
 
