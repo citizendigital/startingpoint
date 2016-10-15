@@ -31,7 +31,8 @@
             // console.log("Tweets arr obj: ", obj.tweets);
             reObj = {};
             reObj["text"] = obj.text;
-            reObj["date"] = obj.created_at;
+            reObj["date"] = moment(obj.created_at).format('MMMM Do YYYY, h:mm:ss a'); // the moment.js library converts the time to a readable format
+
             return reObj;
         });
     };
