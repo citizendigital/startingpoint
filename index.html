@@ -35,6 +35,26 @@
             </div>
         </div>
     </script>
+
+    <script id="top5Template" type="text/x-handlebars-template">
+        <div class="sectionWrapper">
+            <div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {{date}}
+                    </div>
+
+                    <div class="panel-body">
+                        {{text}}
+                    </div>
+                    <div class="panel-footer">
+                        Retweets: {{retweet_count}}
+                        <span class="pull-right">{{user}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
 </head>
 
 <body>
@@ -250,6 +270,7 @@
         <div class="well">
             <h2>Top 5 Topics</h2>
         </div>
+        <div id="tweetsTop5"></div>
     </div>
 </div>
 
