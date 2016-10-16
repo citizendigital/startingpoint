@@ -1,0 +1,15 @@
+#jumboName {
+    text-align: center;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+#sortingMenu {
+    background-color: #E6829A;
+}
+
+#issuesList {
+    list-style-type: none;
+    padding-left: 0;
+}

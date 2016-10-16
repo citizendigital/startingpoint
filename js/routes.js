@@ -1,17 +1,32 @@
 page('/', function(){
-    // mainController.index();
-    tweetsController.init();
+
+    tweetsController.recent();
     formController.init();
+    mainView.init();
 });
+
 page('/about', function() {
-    aboutController.index();
+    mainView.about();
 });
+
+page('/about', function() {
+   mainView.about();
+});
+
 page('/form', function() {
     formController.index();
 });
+
 page('/team', function() {
-    teamController.index();
+    mainView.team();
 });
 
-//  Activate page.js!
+page('/newest', function () {
+    tweetsController.recent();
+});
+
+page('/popular', function () {
+    tweetsController.popular();
+});
+
 page();

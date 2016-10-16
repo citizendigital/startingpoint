@@ -1,33 +1,31 @@
-(function(module) {
+(function (module) {
     var tweetsController = {};
-    tweetsController.all = [];
+    tweetsController.all = []; // stored tweets
 
-    tweetsController.init = function() {
-        if(tweetsController.all.length !== 0) {
+    tweetsController.popular = function () {
+        if (tweetsController.all.length !== 0) {
             tweetsController.all = [];
         }
 
-        $.get('/collection', function(data){
+        $.get('/collection/popular', function (data) {
+            tweetsController.all.push(data);
             console.log(data);
-            tweetsController.all.push(data.objects);
+
+            // add initial view render for index page
+            tweetView.popular(tweetsController.all[0]);
         });
     };
 
-    tweetsController.newestTweets = function () {
-                            // this method turn an object of objects into an array
-        var tweetsArr = Object.keys(tweetsController.all[0].users).map(function (key){ return tweetsController.all[0].users[key];});
-        return tweetsArr.map(function(obj){
-            reObj = {};
-            reObj["text"] = obj.text;
-            reObj["created_at"] = obj.created_at;
-            reObj["screen_name"] = obj.screen_name;
-            return reObj;
-        });
-    };
+    tweetsController.recent = function () {
+        if (tweetsController.all.length !== 0) {
+            tweetsController.all = [];
+        }
 
-    tweetsController.with = function(attr){
-        return tweetsController.all[0].tweets.filter(function(tweetObj){
-           return  tweetObj[attr];
+        $.get('/collection/recent', function (data) {
+            tweetsController.all.push(data);
+
+            // add initial view render for index page
+            tweetView.newest(tweetsController.all[0]);
         });
     };
 
