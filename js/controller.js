@@ -11,7 +11,6 @@
         $.get('/collection', function (data) {
             tweetsController.all.push(data.objects.tweets);
             console.log(data.objects);
-            tweetView.init();
         });
 
         // add initial view render for index page
@@ -61,12 +60,6 @@
             return reObj;
         }).sort(function(a, b){
             return a.retweets < b.retweets;
-        });
-    };
-
-    tweetsController.with = function (attr) {
-        return tweetsController.all[0].tweets.filter(function (tweetObj) {
-            return tweetObj[attr];
         });
     };
 

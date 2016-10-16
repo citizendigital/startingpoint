@@ -24,4 +24,8 @@ page('/newest', function () {
 
 });
 
+page('/popular', function () {
+    tweetsController.init(tweetView.popular);
+});
+
 page();

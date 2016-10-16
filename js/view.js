@@ -2,29 +2,30 @@
     mainView = {};
 
     mainView.init = function () {
-        $('#about, #team, #form, #sortingMenu, #tweetsPool').fadeOut(500, function(){
-            $('#sortingMenu, #tweetsPool').fadeIn(500);
+        tweetView.newest();
+        $('#about, #team, #form').fadeOut(300, function(){
+            $('#sortingMenu, #tweetsPool').delay(300).fadeIn(300);
         });
 
     };
 
     mainView.about = function () {
-        $('#sortingMenu, #tweetsPool, #team, #form, #about').fadeOut(500, function () {
-            $('#about').fadeIn(500);
+        $('#sortingMenu, #tweetsPool, #team, #form').fadeOut(300, function () {
+            $('#about').delay(300).fadeIn(300);
         });
     };
 
     mainView.team = function () {
-        $('#sortingMenu, #tweetsPool, #form, #about, #team').fadeOut(500, function () {
-            $('#team').fadeIn(500);
+        $('#sortingMenu, #tweetsPool, #form, #about').fadeOut(300, function () {
+            $('#team').delay(300).fadeIn(300);
         });
     };
 
     mainView.addIssue = function () {
-        $('#sortingMenu, #tweetsPool, #about, #team, #form').fadeOut(500, function () {
-            $('#form').fadeIn(500);
+        $('#sortingMenu, #tweetsPool, #about, #team').fadeOut(300, function () {
+            $('#form').delay(300).fadeIn(300);
         });
     };
-    
+
     module.mainView = mainView;
 })(window);
