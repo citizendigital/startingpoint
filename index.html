@@ -23,14 +23,14 @@
                     <div class="panel-heading">
                         {{date}}
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            {{text}}
-                        </div>
+
+                    <div class="panel-body">
+                        {{text}}
                     </div>
-                </div>
-                <div>
-                    <!--<img src={{imgUrl}} alt="">-->
+                    <div class="panel-footer">
+                        Retweets: {{retweet_count}}
+                        <span class="pull-right">{{user}}</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,22 +67,27 @@
 
     <div class="jumbotron" id="jumboName">
         <h1>Starting Point</h1>
-        <br>
-        <p> The Citizen Digital site is the place to add your voice concerning some social justice issues in Portland. We have chosen five topics to direct our attention to:</p>
-            <br />
-            <ul>
-               <li>Homeless</li>
-               <li>Low Income Families</li>
-               <li>Low Income Housing</li>
-               <li>Working Poor</li>
-               <li>Hunger</li>
-             </ul>
-             <br />
-            <p>We encourage you to add your thoughts here. To submit an issue, click the Add an Issue button, you will be taken directly to our Comment Form, write your issue and submit to Twitter, log into your account and post. If you choose to post about one of our featured topics, your post may be presented here on our site as one of the Top 5 Topics.
-          Thank you for your support.</p>
-        <button type="button" class="btn btn-default" id="issueButton">Add an Issue</button>
+
     </div>
 
+    <div class="panel panel-default">
+        <div class="panel-body text-center">
+            <span> The Citizen Digital site is the place to add your voice concerning some social justice issues in Portland. We have chosen five topics to direct our attention to:</span>
+            <br/>
+            <ul id="issuesList">
+                <li>Homeless</li>
+                <li>Low Income Families</li>
+                <li>Low Income Housing</li>
+                <li>Working Poor</li>
+                <li>Hunger</li>
+            </ul>
+            <br>
+            <p>We encourage you to add your thoughts here. To submit an issue, click the Add an Issue button, you will be taken directly to our Comment Form, write your issue and submit to Twitter, log into your account and post. If you choose to post about one of our featured topics, your post may be presented here on our site as one of the Top 5 Topics.
+          Thank you for your support.</p>
+            <br>
+            <button type="button" class="btn btn-default" id="issueButton">Add an Issue</button>
+        </div>
+    </div>
 </div>
 
 <!-- This container holds together the formatting. Everything other than the nav and jumbotron should be inside this div -->
@@ -107,6 +112,7 @@
                 </div>
             </div>
         </div>
+
         <!-- Template Renders here -->
         <div id="tweetsPoolNew"></div>
         <div id="tweetsPoolPopular"></div>
@@ -121,14 +127,16 @@
             <br/>
             <h2> Welcome to this site</h2>
 
-            <p>The Citizen Digital/Starting Point is a project that takes an interesting look at some social justice issues in
+            <p>The Citizen Digital/Starting Point is a project that takes an interesting look at some social justice
+                issues in
                 the Portland Metropolatian area.
                 According to The Atlantic,May 17, 2016, "Can Portland Avoid Repeating
                 San Francisco's Mistakes?", "the city got "discovered, people started flocking here, the tech companies
                 came, and Portland became more expensive. Oregon has been the top destination for people to move to
                 forthree years in a row."</p>
             <p>Now, housing prices are skyrocketing... more people move in and new high-rises and apartment
-                complexes go up. Apartment rents are risig at an annualized rate of 14 percent, one of th largest increases in
+                complexes go up. Apartment rents are risig at an annualized rate of 14 percent, one of th largest
+                increases in
                 the country.</p>
             <p>We encourage you to visit the site, read about the team that developed this social justice app for
                 ease of use. Find out how you can get involved with the some of the most current issues happening now in
@@ -142,7 +150,8 @@
 
             <h2>Possible uses for this site</h2>
             <p>The users visting the site should have their own personal Twitter account in order to post their
-                comments.The users are encouraged to share this site with others, start the conversations and become actively engaged.</p>
+                comments.The users are encouraged to share this site with others, start the conversations and become
+                actively engaged.</p>
 
 
             <h2>Disclamier:</h2>
@@ -168,20 +177,28 @@
             <!--find a stock photo to insert here-->
             <br/>
             <p>CA Cruz-</p>
-            <br />
-              <p>I have a background in non-profit and education for more than 20 years in a variety of roles from Administrative Assistant to Director of Training and Programs.
+            <br/>
+            <p>I have a background in non-profit and education for more than 20 years in a variety of roles from
+                Administrative Assistant to Director of Training and Programs.
 
-  In 1999, I started a non-profit in Florida, as part of my community initiative, I provided pro bono consulting services to new  start up groups, helping the groups identify the organizational structures needed to start, build and sustain their new organization.
+                In 1999, I started a non-profit in Florida, as part of my community initiative, I provided pro bono
+                consulting services to new start up groups, helping the groups identify the organizational structures
+                needed to start, build and sustain their new organization.
 
-  As an academic professional, I taught in community colleges, universitites and community based organizations in New York, Florida, Washington, and Oregon.
+                As an academic professional, I taught in community colleges, universitites and community based
+                organizations in New York, Florida, Washington, and Oregon.
 
-  I hold a doctorate in Adult Education and a Master's in Education.
+                I hold a doctorate in Adult Education and a Master's in Education.
 
-  In 2011, I relocated to Oregon, where I have been actively involved with a variety of community organizations. I launched CREATE Opportunities, LLC in 2012.<p>
+                In 2011, I relocated to Oregon, where I have been actively involved with a variety of community
+                organizations. I launched CREATE Opportunities, LLC in 2012.
+            <p>
 
-<p>My current activities include facilitating girls' groups for a non-profit organization that provides after school programs to help girls form healthy peer networks, achieve academically and begin their futures with Girls Group meetings and other enrichment activities in the public school district.</p>
+            <p>My current activities include facilitating girls' groups for a non-profit organization that provides
+                after school programs to help girls form healthy peer networks, achieve academically and begin their
+                futures with Girls Group meetings and other enrichment activities in the public school district.</p>
 
-</p>
+            </p>
             <br/>
             <p>J Dhabolt- insert bio here</p>
             <br/>
@@ -249,7 +266,6 @@
 <script src="vendor/scripts/webdb.js"></script>
 <script src="vendor/scripts/page.js"></script>
 
-<script src="./js/aboutController.js"></script>
 <script src="./js/controller.js"></script>
 <script src="./js/formController.js"></script>
 <script src="./js/view.js"></script>

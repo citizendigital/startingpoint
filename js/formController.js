@@ -2,20 +2,20 @@
     var formController = {};
     formController.data = {};
     formController.twitterData = {};
+    // onclick event to show issue form
+    $("#issueButton").on('click', function () {
+        mainView.addIssue();
+    });
+
+    $('#input_Text').keyup(function count() {
+        var characters = $('#input_Text').val().length;
+        var counter = 140 - characters;
+        $("#count").html(counter);
+    });
 
     formController.init =  function(){
 
         // character counter
-        $('#input_Text').keyup(function count(){
-            var characters = $('#input_Text').val().length;
-            var counter = 140 - characters;
-            $("#count").html(counter);
-        });
-
-        // onclick event to show issue form
-        $("#issueButton").on('click', function(){
-            mainView.addIssue();
-        });
 
         $('#btn_Submit').on('click', function(){
             // Gather data

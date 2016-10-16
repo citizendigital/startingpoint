@@ -8,3 +8,8 @@
 #sortingMenu {
     background-color: #E6829A;
 }
+
+#issuesList {
+    list-style-type: none;
+    padding-left: 0;
+}

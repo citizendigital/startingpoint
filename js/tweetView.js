@@ -7,20 +7,19 @@
         return template(data);
     };
 
-    tweetView.newest = function () {
-
-        var newTweets = tweetsController.newestTweets();
-        console.log("New Tweets var: ", newTweets);
+    tweetView.newest = function (data) {
+        $("#tweetsPoolPopular").fadeOut(300);
         $('#tweetsPoolNew').append(
-            newTweets.map(render)
-        );
+            data.map(render)
+        ).delay(100).fadeIn(300);
     };
 
-    tweetView.popular = function () {
-      var popularTweets = tweetsController.popularTweets();
+    tweetView.popular = function (data) {
+        $("#tweetsPoolNew").fadeOut(300);
         $('#tweetsPoolPopular').append(
-            popularTweets.map(render)
-        )
+            data.map(render)
+        ).delay(100).fadeIn(300);
     };
+
     module.tweetView = tweetView;
 })(window);
