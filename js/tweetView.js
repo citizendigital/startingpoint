@@ -1,7 +1,6 @@
 (function (module) {
     var tweetView = {};
 
-
     var render = function (data) {
     Handlebars.registerHelper('wrapURL', function(str) {
         str = Handlebars.Utils.escapeExpression(str);
