@@ -22,10 +22,12 @@ page('/team', function() {
 });
 
 page('/newest', function () {
+    $("#tweetsPoolNew").children().fadeOut(200).remove();
     tweetsController.recent();
 });
 
 page('/popular', function () {
+    $("#tweetsPoolPopular").children().fadeOut(200).remove();
     tweetsController.popular();
 });
 

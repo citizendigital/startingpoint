@@ -59,7 +59,7 @@
 </head>
 
 <body>
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="navTop">
     <div class="container">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -87,14 +87,17 @@
 <div class="container-fluid bgBlue">
 
     <div class="jumbotron" id="jumboName">
+    <div class="panel panel-default" id="jumboPanel">
+        <div class="panel-body text-center">
         <h1>Starting Point</h1>
+            <h4>Make your voice heard on issues that matter to your community.</h4>
+            <button type="button" class="btn btn-default" id="issueButton">Add an Issue</button>
+        </div>
+    </div>
 
     </div>
 
-    <div class="panel panel-default">
-        <div class="panel-body text-center">
             <!-- <span> The Citizen Digital site is the place to add your voice concerning some social justice issues in Portland. We have chosen five topics to direct our attention to:</span> -->
-            <h4>Make your voice heard on issues that matter to your community.</h4>
             <!-- <ul id="issuesList">
                 <li>Homeless</li>
                 <li>Low Income Families</li>
@@ -103,15 +106,11 @@
                 <li>Hunger</li>
             </ul> -->
             <!-- <p>We encourage you to add your thoughts here. To submit an issue, click the Add an Issue button, you will be taken directly to our Comment Form, write your issue and submit to Twitter, log into your account and post. If you choose to post about one of our featured topics, your post may be presented here on our site as one of the Top 5 Topics. Thank you for your support.</p> -->
-            <button type="button" class="btn btn-default" id="issueButton">Add an Issue</button>
-        </div>
-    </div>
 </div>
 
 <!-- This container holds together the formatting. Everything other than the nav and jumbotron should be inside this div -->
 <div class="container">
 
-    <div class="col-lg-8" id="columnLeft">
         <div class="navbar navbar-default " role="navigation" id="sortingMenu">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -122,14 +121,17 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-menubuilder">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="/newest">Newest Tweets</a>
+                        <li><a href="/newest" id="newestLink">Newest Tweets</a>
                         </li>
-                        <li><a href="/popular">Popular Tweets</a>
+                        <li><a href="/popular" id="popularLink">Popular Tweets</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
+</div>
+<div class="container">
+    <div class="col-lg-8" id="columnLeft">
 
         <!-- Template Renders here -->
         <div id="tweetsPoolNew"></div>
