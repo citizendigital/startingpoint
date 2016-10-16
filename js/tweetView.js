@@ -12,7 +12,7 @@
         console.log("New Tweets var: ", newTweets);
         $('#tweetsPool').append(
             newTweets.map(render)
-        )
+        );
     };
 
     module.tweetView = tweetView;
