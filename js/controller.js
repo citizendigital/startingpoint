@@ -1,47 +1,31 @@
 (function (module) {
     var tweetsController = {};
     tweetsController.all = []; // stored tweets
-    tweetsController.newest = [];
 
-    tweetsController.init = function (callback) {
+    tweetsController.popular = function () {
         if (tweetsController.all.length !== 0) {
             tweetsController.all = [];
         }
 
         $.get('/collection/popular', function (data) {
-            // tweetsController.all.push(data.objects.tweets);
             tweetsController.all.push(data);
             console.log(data);
-            tweetView.init();
-        });
 
-        // add initial view render for index page
-        callback();
-    };
-
-    tweetsController.newestTweets = function () {
-        // this method turn an object of objects into an array
-        // var allTweets = tweetsController.all[0];
-        // var tweetsArr = Object.keys(
-        //     allTweets).map(
-        //     function (key) {
-        //         return allTweets[key];
-        //     });
-        var tweetsArr = tweetsController.all[0];
-
-        return tweetsArr.map(function (obj) {
-            // console.log("Tweets arr obj: ", obj.tweets);
-            reObj = {};
-            reObj["text"] = obj.text;
-            reObj["date"] = moment(obj.created_at).format('MMMM Do YYYY, h:mm:ss a'); // the moment.js library converts the time to a readable format
-
-            return reObj;
+            // add initial view render for index page
+            tweetView.popular(tweetsController.all[0]);
         });
     };
 
-    tweetsController.with = function (attr) {
-        return tweetsController.all[0].tweets.filter(function (tweetObj) {
-            return tweetObj[attr];
+    tweetsController.recent = function () {
+        if (tweetsController.all.length !== 0) {
+            tweetsController.all = [];
+        }
+
+        $.get('/collection/recent', function (data) {
+            tweetsController.all.push(data);
+
+            // add initial view render for index page
+            tweetView.newest(tweetsController.all[0]);
         });
     };
 

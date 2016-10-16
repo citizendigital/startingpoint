@@ -2,32 +2,29 @@
     mainView = {};
 
     mainView.init = function () {
-        $('#about').hide();
-        $('#team').hide();
-        $('#form').hide();
-        $('#tweetsPool').show();
+        $('#about, #team, #form').fadeOut(300, function(){
+            $('#sortingMenu, #tweetsPool').delay(300).fadeIn(300);
+        });
+
     };
 
     mainView.about = function () {
-        $('#tweetsPool').hide();
-        $('#team').hide();
-        $('#form').hide();
-        $('#about').show();
+        $('#sortingMenu, #tweetsPoolNew, #tweetsPoolPopular, #team, #form').fadeOut(300, function () {
+            $('#about').delay(300).fadeIn(300);
+        });
     };
 
     mainView.team = function () {
-        $('#tweetsPool').hide();
-        $('#form').hide();
-        $('#about').hide();
-        $('#team').show();
+        $('#sortingMenu, #tweetsPoolNew, #tweetsPoolPopular, #form, #about').fadeOut(300, function () {
+            $('#team').delay(300).fadeIn(300);
+        });
     };
 
     mainView.addIssue = function () {
-        $('#tweetsPool').hide();
-        $('#about').hide();
-        $('#team').hide();
-        $('#form').show();
+        $('#sortingMenu, #tweetsPoolNew, #tweetsPoolPopular, #about, #team').fadeOut(300, function () {
+            $('#form').delay(300).fadeIn(300);
+        });
     };
-    
+
     module.mainView = mainView;
 })(window);

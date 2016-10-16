@@ -1,7 +1,8 @@
 page('/', function(){
 
-    tweetsController.init(mainView.init);
+    tweetsController.recent();
     formController.init();
+    mainView.init();
 });
 
 page('/about', function() {
@@ -9,7 +10,7 @@ page('/about', function() {
 });
 
 page('/about', function() {
-    aboutController.index();
+   mainView.about();
 });
 
 page('/form', function() {
@@ -18,6 +19,14 @@ page('/form', function() {
 
 page('/team', function() {
     mainView.team();
+});
+
+page('/newest', function () {
+    tweetsController.recent();
+});
+
+page('/popular', function () {
+    tweetsController.popular();
 });
 
 page();

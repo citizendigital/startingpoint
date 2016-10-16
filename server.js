@@ -30,6 +30,14 @@ app.get('/form', function(req, res){
     res.sendfile('index.html');
 });
 
+app.get('/newest', function(req, res){
+    res.sendfile('index.html');
+});
+
+app.get('/popular', function(req, res){
+    res.sendfile('index.html');
+});
+
 app.listen(port, function() {
     console.log('Server started on port ' + port + '!');
 });
@@ -69,7 +77,8 @@ function sort(data, sortType){
             text: tweetsObj[key].text,
             hashtags: tweetsObj[key].entities.hashtags.map(function(el){return el.text;}),
             user: getUser(tweetsObj[key].user.id_str, 'name'),
-            screen_name: getUser(tweetsObj[key].user.id_str, 'screen_name')
+            screen_name: getUser(tweetsObj[key].user.id_str, 'screen_name'),
+            date: tweetsObj[key].created_at
         });
     }
 
@@ -79,7 +88,7 @@ function sort(data, sortType){
 
     if(sortType === 'recent'){
         sortedArr.sort(function(a, b){
-            return a.id - b.id;
+            return b.id - a.id;
         });
     }
     if(sortType === 'popular'){
@@ -92,39 +101,39 @@ function sort(data, sortType){
 
 
 
-// // Post user tweet to our collection
-// app.post('/collection/:tweet_id', function(req, res) {
-//     var params = {id: 'custom-786661844542902272',
-//     tweet_id: req.params.tweet_id
-// };
-//
-//     client.post('collections/entries/add', params, function(error, tweets, response) {
-//         if (!error) {
-//             console.log(tweets);
-//             res.send(tweets);
-//         } else {
-//             console.log(response.toJSON());
-//         }
-//     });
-// });
-//
-// // // Gets timeline (list of tweets) from a username
-// app.get('*/timeline/:username/:count/:since_id', function(req, res) {
-//     var params = {
-//         screen_name: req.params.username,
-//         count: req.params.count,
-//         since_id: req.params.since_id
-//     };
-//
-//     client.get('statuses/user_timeline', params, function(error, tweets, response) {
-//         if (!error) {
-//             if(tweets.length){
-//                 console.log(tweets);
-//                 res.send(tweets);
-//             }
-//         }
-//     });
-// });
+// Post user tweet to our collection
+app.post('/collection/:tweet_id', function(req, res) {
+    var params = {id: 'custom-786661844542902272',
+    tweet_id: req.params.tweet_id
+};
+
+    client.post('collections/entries/add', params, function(error, tweets, response) {
+        if (!error) {
+            console.log(tweets);
+            res.send(tweets);
+        } else {
+            console.log(response.toJSON());
+        }
+    });
+});
+
+// // Gets timeline (list of tweets) from a username
+app.get('*/timeline/:username/:count/:since_id', function(req, res) {
+    var params = {
+        screen_name: req.params.username,
+        count: req.params.count,
+        since_id: req.params.since_id
+    };
+
+    client.get('statuses/user_timeline', params, function(error, tweets, response) {
+        if (!error) {
+            if(tweets.length){
+                console.log(tweets);
+                res.send(tweets);
+            }
+        }
+    });
+});
 
 
 // // Output a stream of tweets (realtime) with keyword 'pdx'
