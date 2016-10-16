@@ -16,9 +16,7 @@
 
     top5View.popular = function (data) {
        // $("#tweetsTop5").fadeOut(300);
-        $('#tweetsTop5').append(
-            data.map(render)
-        ).delay(100).fadeIn(300);
+        $('#tweetsTop5').append(data.map(render));
     };
 
     module.top5View = top5View;

@@ -37,19 +37,19 @@
     </script>
 
     <script id="top5Template" type="text/x-handlebars-template">
-        <div class="sectionWrapper">
+        <div class="wrapper">
             <div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
+                <div class="top5panel top5panel-default">
+                    <div class="top5panel-heading">
                         {{date}}
                     </div>
 
-                    <div class="panel-body">
+                    <div class="top5panel-body">
                         {{text}}
                     </div>
-                    <div class="panel-footer">
+                    <div class="top5panel-footer">
                         Retweets: {{retweet_count}}
-                        <span class="pull-right">{{user}}</span>
+                        <span class="right">{{user}}</span>
                     </div>
                 </div>
             </div>
@@ -268,7 +268,7 @@
 
         <!-- Blog Search Well -->
         <div class="well">
-            <h2>Top 5 Topics</h2>
+            <h2>Top 5 Topics tweets</h2>
         </div>
         <div id="tweetsTop5"></div>
     </div>
