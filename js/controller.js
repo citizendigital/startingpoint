@@ -7,7 +7,6 @@
             tweetsController.all = [];
         }
 
-
         $.get('/collection/popular', function (data) {
             tweetsController.all.push(data);
             console.log(data);
@@ -28,6 +27,7 @@
 
             // add initial view render for index page
             tweetView.newest(tweetsController.all[0]);
+            top5View.popular(tweetsController.all[0]);
         });
     };
 
