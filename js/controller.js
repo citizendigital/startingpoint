@@ -8,23 +8,20 @@
             tweetsController.all = [];
         }
 
-        $.get('/collection', function (data) {
-            tweetsController.all.push(data.objects.tweets);
-            console.log(data.objects);
+        $.get('/collection/popular', function (data) {
+            // tweetsController.all.push(data.objects.tweets);
+            tweetsController.all.push(data);
+            console.log(data);
+            tweetView.init();
         });
 
         // add initial view render for index page
         callback();
+
     };
 
     tweetsController.newestTweets = function () {
-        // this method turn an object of objects into an array
-        var allTweets = tweetsController.all[0];
-        var tweetsArr = Object.keys(
-            allTweets).map(
-            function (key) {
-                return allTweets[key];
-            });
+        var tweetsArr = tweetsController.all[0];
 
         return tweetsArr.map(function (obj) {
             // console.log("Tweets arr obj: ", obj.tweets);
@@ -35,7 +32,7 @@
             reObj["date"] = moment(obj.created_at).format('MMMM Do YYYY, h:mm:ss a');
 
             return reObj;
-        }).sort(function(a, b){
+        }).sort(function (a, b) {
             return a.date < b.date;
         });
     };
@@ -58,7 +55,7 @@
             reObj["date"] = moment(obj.created_at).format('MMMM Do YYYY, h:mm:ss a');
 
             return reObj;
-        }).sort(function(a, b){
+        }).sort(function (a, b) {
             return a.retweets < b.retweets;
         });
     };

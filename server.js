@@ -35,50 +35,96 @@ app.listen(port, function() {
 });
 
 // Gets (collection) entries associated with citizendigital_
-app.get('/collection', function(req, res) {
-    var params = {id: 'custom-786661844542902272', q:'node.js'};
+app.get('/collection/:sortType', function(req, res) {
+    var params = {
+        id: 'custom-786661844542902272'
+    };
 
     client.get('collections/entries', params, function(error, tweets, response) {
         if (!error) {
             console.log(tweets);
-            res.send(tweets);
+            var sorted = sort(tweets, req.params.sortType);
+            res.send(sorted);
+            // res.send(tweets);
         } else {
             console.log(response.toJSON());
         }
     });
 });
 
-// Post user tweet to our collection
-app.post('/collection/:tweet_id', function(req, res) {
-    var params = {id: 'custom-786661844542902272', tweet_id: req.params.tweet_id, q:'node.js'};
 
-    client.post('collections/entries/add', params, function(error, tweets, response) {
-        if (!error) {
-            console.log(tweets);
-            res.send(tweets);
-        } else {
-            console.log(response.toJSON());
-        }
-    });
-});
+// sort according to: req.params.sortType
+function sort(data, sortType){
+    // console.log(data);
+    var tweetsObj = data.objects.tweets;
+    var usersObj = data.objects.users;
 
-// // Gets timeline (list of tweets) from a username
-app.get('*/timeline/:username/:count/:since_id', function(req, res) {
-    var params = {
-        screen_name: req.params.username,
-        count: req.params.count,
-        since_id: req.params.since_id
-    };
+    var sortedArr = [];
+    for(var key in tweetsObj){
+        sortedArr.push({
+            key: key,
+            id: +key,
+            retweet_count: tweetsObj[key].retweet_count,
+            source: tweetsObj[key].source,
+            text: tweetsObj[key].text,
+            hashtags: tweetsObj[key].entities.hashtags.map(function(el){return el.text;}),
+            user: getUser(tweetsObj[key].user.id_str, 'name'),
+            screen_name: getUser(tweetsObj[key].user.id_str, 'screen_name')
+        });
+    }
 
-    client.get('statuses/user_timeline', params, function(error, tweets, response) {
-        if (!error) {
-            if(tweets.length){
-                console.log(tweets);
-                res.send(tweets);
-            }
-        }
-    });
-});
+    function getUser(id, prop){
+        return usersObj[id][prop];
+    }
+
+    if(sortType === 'recent'){
+        sortedArr.sort(function(a, b){
+            return a.id - b.id;
+        });
+    }
+    if(sortType === 'popular'){
+        sortedArr.sort(function(a, b){
+            return b.retweet_count - a.retweet_count;
+        });
+    }
+    return sortedArr;
+}
+
+
+
+// // Post user tweet to our collection
+// app.post('/collection/:tweet_id', function(req, res) {
+//     var params = {id: 'custom-786661844542902272',
+//     tweet_id: req.params.tweet_id
+// };
+//
+//     client.post('collections/entries/add', params, function(error, tweets, response) {
+//         if (!error) {
+//             console.log(tweets);
+//             res.send(tweets);
+//         } else {
+//             console.log(response.toJSON());
+//         }
+//     });
+// });
+//
+// // // Gets timeline (list of tweets) from a username
+// app.get('*/timeline/:username/:count/:since_id', function(req, res) {
+//     var params = {
+//         screen_name: req.params.username,
+//         count: req.params.count,
+//         since_id: req.params.since_id
+//     };
+//
+//     client.get('statuses/user_timeline', params, function(error, tweets, response) {
+//         if (!error) {
+//             if(tweets.length){
+//                 console.log(tweets);
+//                 res.send(tweets);
+//             }
+//         }
+//     });
+// });
 
 
 // // Output a stream of tweets (realtime) with keyword 'pdx'

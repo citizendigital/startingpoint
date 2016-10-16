@@ -13,7 +13,7 @@
         console.log("New Tweets var: ", newTweets);
         $('#tweetsPoolNew').append(
             newTweets.map(render)
-        )
+        );
     };
 
     tweetView.popular = function () {
