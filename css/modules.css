@@ -1,12 +1,22 @@
+#navTop {
+    margin-bottom: 0;
+}
+
 #jumboName {
     text-align: center;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0;
+    margin-bottom:0;
 }
-
+.jumbotron {
+    background-color: transparent;
+}
+#jumboPanel {
+    background-color: rgba(270,270,270,0.8);
+}
 #sortingMenu {
-    background-color: #E6829A;
+    background-color: #e69aad;
 }
 
 #issuesList {
@@ -18,4 +28,12 @@
 
 #issueButton {
     margin: 20px;
+}
+
+.bgBlue {
+    background-image: url("/img/PortlandCityHall2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
