@@ -39,17 +39,17 @@
     <script id="top5Template" type="text/x-handlebars-template">
         <div class="wrapper">
             <div>
-                <div class="top5panel top5panel-default">
-                    <div class="top5panel-heading">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
                         {{date}}
                     </div>
 
-                    <div class="top5panel-body">
+                    <div class="panel-body">
                         {{text}}
                     </div>
-                    <div class="top5panel-footer">
+                    <div class="panel-footer">
                         Retweets: {{retweet_count}}
-                        <span class="right">{{user}}</span>
+                        <span class="pull-right">{{user}}</span>
                     </div>
                 </div>
             </div>
@@ -268,7 +268,7 @@
 
         <!-- Blog Search Well -->
         <div class="well">
-            <h2>Top 5 Topics tweets</h2>
+            <h2>Top 5 Topics</h2>
         </div>
         <div id="tweetsTop5"></div>
     </div>
@@ -288,6 +288,7 @@
 <script src="./js/formController.js"></script>
 <script src="./js/view.js"></script>
 <script src="./js/tweetView.js"></script>
+<script src="./js/top5View.js"></script>
 <script src="./js/routes.js"></script>
 </body>
 

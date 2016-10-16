@@ -15,7 +15,14 @@
     // };
 
     top5View.popular = function (data) {
-       // $("#tweetsTop5").fadeOut(300);
+       
+       console.log(data[0].id);
+       data.sort(function(a,b){
+           return b.retweet_count - a.retweet_count;
+       })
+       console.log(data);
+       data=data.slice(0,5);
+       console.log(data);
         $('#tweetsTop5').append(data.map(render));
     };
 
