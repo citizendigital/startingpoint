@@ -12,4 +12,10 @@
 #issuesList {
     list-style-type: none;
     padding-left: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+#issueButton {
+    margin: 20px;
 }
