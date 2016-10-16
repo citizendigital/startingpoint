@@ -1,4 +1,5 @@
 var Twitter = require('twitter');
+var moment = require('moment');
 var client = new Twitter({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -14,28 +15,27 @@ var requestProxy = require('express-request-proxy'),
 app.use(express.static('./'));
 
 app.get('/', function(request, response) {
-    console.log('New request:', request.url);
     response.sendFile('index.html', { root: '.' });
 });
 
 app.get('/about', function(req, res){
-    res.sendfile('index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 app.get('/team', function(req, res){
-    res.sendfile('index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 app.get('/form', function(req, res){
-    res.sendfile('index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 app.get('/newest', function(req, res){
-    res.sendfile('index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 app.get('/popular', function(req, res){
-    res.sendfile('index.html');
+    res.sendFile('index.html', { root: '.' });
 });
 
 app.listen(port, function() {
@@ -50,12 +50,12 @@ app.get('/collection/:sortType', function(req, res) {
 
     client.get('collections/entries', params, function(error, tweets, response) {
         if (!error) {
-            console.log(tweets);
+
             var sorted = sort(tweets, req.params.sortType);
             res.send(sorted);
             // res.send(tweets);
         } else {
-            console.log(response.toJSON());
+            console.log("Error: ", error)
         }
     });
 });
@@ -63,7 +63,7 @@ app.get('/collection/:sortType', function(req, res) {
 
 // sort according to: req.params.sortType
 function sort(data, sortType){
-    // console.log(data);
+
     var tweetsObj = data.objects.tweets;
     var usersObj = data.objects.users;
 
@@ -78,7 +78,7 @@ function sort(data, sortType){
             hashtags: tweetsObj[key].entities.hashtags.map(function(el){return el.text;}),
             user: getUser(tweetsObj[key].user.id_str, 'name'),
             screen_name: getUser(tweetsObj[key].user.id_str, 'screen_name'),
-            date: tweetsObj[key].created_at
+            date: moment(tweetsObj[key].created_at, "ddd MMM DD HH:mm:ss Z YYYY").format('dddd, MMMM Do, h:mm a')
         });
     }
 
